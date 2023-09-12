@@ -1,0 +1,22 @@
+html {
+  width: 900px;
+  height: 900px;
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  overflow: hidden; 
+}
+
+
+body {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 16px;
+  padding: 1em;
+  text-align:Left;
+  width: 900px;
+  height: 900px;
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  overflow: hidden; /* to hide any content that might extend beyond the window */
+}
