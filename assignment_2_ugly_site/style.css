@@ -1,0 +1,80 @@
+html {
+  cursor: url('https://photolibrary.commons.gc.cuny.edu/wp-content/blogs.dir/27109/files/2023/09/cursor.png'), auto;
+}
+
+h2 {
+  text-align: center;
+  color: whitesmoke;
+  font-family: font-family: 'Inconsolata', monospace;;
+  font-size: 80px;
+  text-shadow: 5px 5px 10px pink;
+}
+
+
+h3 {
+  color: whitesmoke;
+  font-family: 'Noto Serif TC', serif;
+}
+
+.math-container {
+  display: flex-wrap: wrap;
+  transition: transform 0.1s ease;
+}
+
+.math-container img:hover {
+  transform: scale(1.2); 
+}
+
+.m1 {
+  transform: rotate(135deg);
+  opacity: 40%;
+}
+
+.m2 {
+  transform: rotate(-5deg);
+  opacity: 70%;
+}
+
+.m3 {
+  transform: rotate(15deg);
+  opacity: 60%;
+}
+
+.m4 {
+  transform: rotate(45deg);
+  opacity: 50%;
+}
+
+.m5 {
+  transform: rotate(-45deg);
+  opacity: 70%;
+}
+.m6 {
+  transform: rotate(45deg);
+  opacity: 70%;
+}
+.m7 {
+  transform: rotate(-35deg);
+  opacity: 40%;
+}
+.m8 {
+  transform: rotate(135deg);
+  opacity: 60%;
+}
+
+.lotus-container {
+  justify-content: center;
+  transition: transform 1s ease;
+}
+
+.lotus-container img:hover {
+  filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
+
+
+body {
+  font-family: 'Noto Serif TC', serif;
+  background-image:url(https://i.giphy.com/media/U3qYN8S0j3bpK/giphy.webp);
+  background-position:top left;
+  background-repeat:repeat;
+}

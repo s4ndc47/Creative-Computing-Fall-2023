@@ -18,5 +18,5 @@ body {
   margin: 0;
   margin-left: 20px;
   padding: 0;
-  overflow: hidden; /* to hide any content that might extend beyond the window */
+  overflow: hidden; 
 }
