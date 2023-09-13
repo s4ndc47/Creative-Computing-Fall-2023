@@ -40,26 +40,46 @@ h3 {
   opacity: 60%;
 }
 
+.m3-1 {
+  transform: rotate(15deg);
+  opacity: 100%;
+}
+
 .m4 {
-  transform: rotate(45deg);
-  opacity: 50%;
+  transform: rotate(5deg);
+  opacity: 30%;
+}
+
+.m4-1 {
+  transform: rotate(-10deg);
 }
 
 .m5 {
   transform: rotate(-45deg);
-  opacity: 70%;
+  opacity: 20%;
 }
 .m6 {
   transform: rotate(45deg);
   opacity: 70%;
 }
+
+.m6-2 {
+  transform: rotate(-15deg);
+  opacity: 40%;
+}
+
 .m7 {
   transform: rotate(-35deg);
   opacity: 40%;
 }
+
+.m7-1 {
+  transform: rotate(15deg);
+}
+
 .m8 {
   transform: rotate(135deg);
-  opacity: 60%;
+  opacity: 20%;
 }
 
 .lotus-container {
