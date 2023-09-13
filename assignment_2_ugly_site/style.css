@@ -5,7 +5,7 @@ html {
 h2 {
   text-align: center;
   color: whitesmoke;
-  font-family: font-family: 'Inconsolata', monospace;;
+  font-family: 'Noto Serif TC', serif;
   font-size: 80px;
   text-shadow: 5px 5px 10px pink;
 }
@@ -32,7 +32,7 @@ h3 {
 
 .m2 {
   transform: rotate(-5deg);
-  opacity: 70%;
+  opacity: 40%;
 }
 
 .m3 {
@@ -83,12 +83,20 @@ h3 {
 }
 
 .lotus-container {
-  justify-content: center;
+  position: relative;
   transition: transform 1s ease;
 }
 
 .lotus-container img:hover {
   filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
+
+.text {
+  position: absolute; 
+  top: 50%; 
+  left: 40%; 
+  transform: translate(-50%, -50%); 
+  padding: 10px; 
 }
 
 
