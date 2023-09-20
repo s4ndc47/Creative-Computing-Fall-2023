@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.outer-cont {
+  background: lightgray;
+  border: 1px solid black;
+  padding: 20px;
+  max-width: fit-content;
+  justify-content: center;
+  width: 100%;
+}
+
+.square {
+  background: black;
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+}

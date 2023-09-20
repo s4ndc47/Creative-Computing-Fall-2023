@@ -1,0 +1,81 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+
+.outer-cont {
+  display: flex;
+  align-items: Left;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 18px;
+
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 18px;
+  width: 80%;
+}
+
+.inner-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.card {
+  width: 215px;
+  height: 230px;
+  border-radius: 10px;
+  padding-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 60px;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 2px white, 2px 2px 6px lightgray;
+  text-shadow: 2px 2px 5px lightgray;
+}
+
+#card1 {
+  text-shadow: 1px 1px lightgray
+}
+
+#card2 {
+  background-color: black;
+  text-shadow: none;
+  color: white;
+}
+
+#card3 h3{
+  background-color: #ecc4c2;
+  text-shadow: none;
+  box-shadow: 1px 1px 2px white, 3px 3px 5px lightgray;
+  width: max-content;
+}
+#card4 {
+  border: 1px solid blue;
+}
+#card4 h3{
+  color: crimson
+}

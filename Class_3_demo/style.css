@@ -1,0 +1,41 @@
+ * {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.outer-cont {
+  background: lightgray;
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  max-width: fit-content;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.square {
+  background: white;
+  stroke: black;
+  stroke-width: 3px;
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+}
+
+.square2 {
+  background: black;
+  width: 150px;
+  height: 500px;
+  margin: 15px;
+}
