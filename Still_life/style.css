@@ -1,0 +1,53 @@
+html {
+  height: 90%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Gentium Book Plus', serif;
+  font-family: 'Noto Serif TC', serif;
+}
+
+.P1-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.Author {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.P1-w {
+  line-height: 10px;
+  text-align: center;
+}
+
+.author-june {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 36px;
+}
+
+h2 {
+  font-family: 'Gentium Book Plus', serif;
+  font-size: 24px;
+}
+
+p {
+  font-size: 12px;
+  line-height: 5px;
+}
+
