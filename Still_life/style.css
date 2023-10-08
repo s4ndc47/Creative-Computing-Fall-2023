@@ -1,39 +1,20 @@
-html {
-  height: 90%;
-  width: 100%;
+.stuff {
+  flex-direction: column;
 }
 
-body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Gentium Book Plus', serif;
-  font-family: 'Noto Serif TC', serif;
-}
-
-.P0-text {
+.title {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin-top: 20%;
+  height: 26em;
+  line-height: 10%;
 }
 
-.Author {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 800px;
-}
-
-.P0-w {
-  line-height: 10px;
-  text-align: center;
-}
-
-.author-june {
-  text-align: center;
+.img-box {
+	margin: 0 auto;
+	width: 100%;
 }
 
 h1 {
@@ -46,21 +27,67 @@ h2 {
   font-size: 24px;
 }
 
-p {
+h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 24px;
+}
+
+h4 {
+  font-family: 'Gentium Book Plus', serif;
+  font-size: 18px;
+}
+
+h5 {
+  font-family: 'Gentium Book Plus', serif;
   font-size: 12px;
-  line-height: 5px;
 }
 
-.P1-text {
-  display: flex;
+p {
+  font-family: 'Noto Serif TC', 'Gentium Book Plus', serif;
+  font-size: 18px;
+  line-height: 8px;
+}
+
+.p1 {
+  height: 200em;
+}
+
+.p1-1text {
+  height: 100em;
+  text-align: center;
+  line-height: 8px;
+	z-index: 200;
+  background-color: rgba(255, 255, 255, .85);
+  position: relative;
+}
+
+.p1 {
+  height: 200em;
+}
+
+.p1-2text {
+  height: 200em;
+	font-family: 'Gentium Book Plus', serif;
+  font-family: 'Noto Serif TC', serif;
+	font-size: 24px;
   align-items: center;
+  text-align: center;
+  line-height: 10%;
+	z-index: 200;
+	position: relative;
+  background-color: rgba(255, 255, 255, .85);
+  position: fixed;
+}
+
+#img1-1 {
+  z-index: -1;
+  position: fixed;
   flex-direction: column;
-  justify-content: left;
-  margin-top: 20%;
 }
 
-.P1-w {
-  line-height: 10px;
-  text-align: left;
 
+#img1-2 {
+  z-index: -1;
+  position: fixed;
 }
+
