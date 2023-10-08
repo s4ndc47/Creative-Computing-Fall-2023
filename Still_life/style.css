@@ -10,7 +10,7 @@ body {
   font-family: 'Noto Serif TC', serif;
 }
 
-.P1-text {
+.P0-text {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -27,7 +27,7 @@ body {
   width: 800px;
 }
 
-.P1-w {
+.P0-w {
   line-height: 10px;
   text-align: center;
 }
@@ -51,3 +51,16 @@ p {
   line-height: 5px;
 }
 
+.P1-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 20%;
+}
+
+.P1-w {
+  line-height: 10px;
+  text-align: left;
+
+}
