@@ -3,10 +3,10 @@ $(document).ready(function() {
     console.log(tenEms);
     var prev_scroll = $(window).scrollTop();
 
-    // $('.p1-1').hide();  
-    // $('.p1-2').hide();  
-    // $('.p1-3').hide();  
-    // $('.p1-4').hide();  
+     $('.p1-1').hide();  
+     $('.p1-2').hide();  
+     $('.p1-3').hide();  
+     $('.p1-4').hide();  
 
     var title_top = $('.title').offset().top;
 
