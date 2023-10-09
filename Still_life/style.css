@@ -1,19 +1,21 @@
 .stuff {
   flex-direction: column;
+  text-align: center;
 }
 
 .title {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  text-align: center;
   margin-top: 20%;
-  height: 26em;
+  height: 500px;
   line-height: 10%;
 }
 
 .img-box {
 	margin: 0 auto;
+  text-align: center;
 	width: 100%;
 }
 
@@ -48,46 +50,40 @@ p {
   line-height: 8px;
 }
 
-.p1 {
-  height: 200em;
+.p1-1 {
+  height: 1000px;
+  margin-top: 20%;
+
 }
 
-.p1-1text {
-  height: 100em;
+.p1-1text, .p1-2text, .p1-3text, .p1-4text {
   text-align: center;
   line-height: 8px;
-	z-index: 200;
+	z-index: 1;
   background-color: rgba(255, 255, 255, .85);
+  flex-direction: column;
   position: relative;
 }
 
-.p1 {
-  height: 200em;
+.p1-2 {
+  height: 1500px;
+  margin-top: 20%;
 }
 
-.p1-2text {
-  height: 200em;
-	font-family: 'Gentium Book Plus', serif;
-  font-family: 'Noto Serif TC', serif;
-	font-size: 24px;
-  align-items: center;
-  text-align: center;
-  line-height: 10%;
-	z-index: 200;
-	position: relative;
-  background-color: rgba(255, 255, 255, .85);
-  position: fixed;
+.p1-3 {
+  height: 2000px;
+  margin-top: 20%;
 }
 
-#img1-1 {
+.p1-4 {
+  height: 2500px;
+  margin-top: 20%;
+}
+
+#img1-1, #img1-2, #img1-3, #img1-4 {
   z-index: -1;
-  position: fixed;
+  position: relative;
   flex-direction: column;
 }
 
-
-#img1-2 {
-  z-index: -1;
-  position: fixed;
-}
 
