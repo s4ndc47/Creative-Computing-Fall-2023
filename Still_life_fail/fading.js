@@ -13,7 +13,7 @@ $(document).ready(function() {
     $(window).scroll(function() {
     
         var window_top = $(window).scrollTop();
-
+        console.log(`prev_scroll=${prev_scroll}, title_top=${title_top}, window_top=${window_top}`)
         // scrolling down
         if (prev_scroll < $(window).scrollTop()) {
            
