@@ -28,7 +28,7 @@ body.page-fade-out {
   flex-direction: column;
   text-align: center;
   font-family: 'Noto Serif TC', 'Gentium Book Plus', serif;
-  font-size: 9px;
+  font-size: 4.5px;
   line-height: 1%;
   margin-bottom: 5%;
 }
@@ -41,17 +41,17 @@ body.page-fade-out {
 
 h1 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 h2 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 12px;
+  font-size: 4px;
 }
 
 h3 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 12px;
+  font-size: 9px;
 }
 
 h4 {
@@ -61,7 +61,7 @@ h4 {
 
 h5 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 12px;
+  font-size: 3px;
 }
 
 .p1, .p2, .p3, .p4, .p6 {
