@@ -28,7 +28,7 @@ body.page-fade-out {
   flex-direction: column;
   text-align: center;
   font-family: 'Noto Serif TC', 'Gentium Book Plus', serif;
-  font-size: 18px;
+  font-size: 9px;
   line-height: 1%;
   margin-bottom: 5%;
 }
@@ -41,22 +41,22 @@ body.page-fade-out {
 
 h1 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 36px;
+  font-size: 18px;
 }
 
 h2 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 24px;
+  font-size: 12px;
 }
 
 h3 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 24px;
+  font-size: 12px;
 }
 
 h4 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 18px;
+  font-size: 9px;
 }
 
 h5 {
@@ -70,7 +70,7 @@ h5 {
 
 .p1-text {
   text-align: center;
-  line-height: 8px;
+  line-height: 4px;
 	z-index: 1;
   flex-direction: column;
   position: relative;
@@ -102,7 +102,7 @@ h5 {
 
 .p2-text {
   text-align: left;
-  line-height: 8px;
+  line-height: 4px;
   margin-left: 10%;
 	z-index: 1;
   flex-direction: column;
@@ -117,7 +117,7 @@ h5 {
 
 .p3-text {
   text-align: right;
-  line-height: 8px;
+  line-height: 4px;
   margin-right: 30%;
 	z-index: 1;
 }
@@ -145,7 +145,7 @@ h5 {
 
 .p4-text {
   text-align: left;
-  line-height: 8px;
+  line-height: 4px;
   margin-left: 10%;
 	z-index: 1;
   flex-direction: column;
@@ -160,7 +160,7 @@ h5 {
 .p5-text {
   color: white;
   text-align: center;
-  line-height: 8px;
+  line-height: 4px;
 	z-index: 1;
   flex-direction: column;
   position: absolute;
