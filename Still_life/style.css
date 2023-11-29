@@ -46,12 +46,12 @@ h1 {
 
 h2 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 4px;
+  font-size: 12px;
 }
 
 h3 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 h4 {
@@ -61,7 +61,7 @@ h4 {
 
 h5 {
   font-family: 'Gentium Book Plus', serif;
-  font-size: 3px;
+  font-size: 12px;
 }
 
 .p1, .p2, .p3, .p4, .p6 {
