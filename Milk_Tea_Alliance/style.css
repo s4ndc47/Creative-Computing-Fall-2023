@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+@keyframes backgroundFade {
+  0% { background-color: #e2be9f; }
+  50% { background-color: #f7cecd; }
+  100% { background-color: #e2be9f; }
+}
+
+body {
+  width: 100%;
+  font-family: "Early GameBoy Regular";
+  animation: backgroundFade 5s infinite;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+}
+
+.outer-cont {
+  text-align: center; 
+}
+
+.title h1 {
+  font-size: 36px;
+  margin-bottom:10%; 
+  font-family: '04b', sans-serif;
+}
+
+.inner-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: flex-end; 
+  gap: 20px; 
+}
+
+.card {
+  width: 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.card img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.card p {
+  font-size: 18px;
+  margin-top: 10px; 
+}
+
+.card-link {
+  text-decoration: none; 
+  color: #b2673b; 
+}
+
+.card-link:visited {
+  color: #fa001d; 
+}
+
+.card-link:hover {
+  text-decoration: none; 
+}
+
