@@ -31,7 +31,10 @@ body {
   font-size: 36px;
   margin-bottom:10%; 
   font-family: '04b', sans-serif;
+  word-spacing: -.4ch;
 }
+
+
 
 .inner-cont {
   display: flex;

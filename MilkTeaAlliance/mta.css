@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: "Early GameBoy Regular";
+  animation: backgroundFade 5s infinite;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+}
+
+@keyframes backgroundFade {
+  0% { background-color: #e2be9f; }
+  50% { background-color: #f7cecd; }
+  100% { background-color: #e2be9f; }
+}
+
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 19000px; /* Adjust as needed */
+}
+
+.map {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+}
+
+.item-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust as needed */
+}
+
+.item {
+  position: absolute;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  transform: translate(-50%, -50%);
+  
+}
+
+#item1 { margin-top: 8%; margin-left: 50%; }
+#item2 { margin-top: 88%; margin-left: 20%; }
+#item3 { margin-top: 168%; margin-left: 60%; }
+#item4 { margin-top: 248%; margin-left: 40%; }
+#item5 { margin-top: 328%; margin-left: 80%; }
+#item6 { margin-top: 400%; margin-left: 50%; }
+#item7 { margin-top: 480%; margin-left: 32%; }
+#item8 { margin-top: 560%; margin-left: 72%; }
+#item9 { margin-top: 640%; margin-left: 35%; }
+#item10 { margin-top: 720%; margin-left: 72%; }
+#item11 { margin-top: 800%; margin-left: 50%; }
+#item12 { margin-top: 880%; margin-left: 55%; }
+#item13 { margin-top: 940%; margin-right: 10%; }
+#item14 { margin-top: 980%; margin-left: 50%; }
+#item15 { margin-top: 1020%; margin-left: 50%; }
+#item16 { margin-top: 1030%; margin-left: 50%; }
+#item17 { margin-top: 1045%; margin-left: 50%; }
+#item18 { margin-top: 1060%; margin-left: 50%; }
