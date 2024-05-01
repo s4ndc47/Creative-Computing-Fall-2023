@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 Tooltip Example</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h2>
+            Visualizaing the Rise of Women Soccer
+        </h2>
+    </div>
+    <div class="outer-cont">
+        <div class="attedence-cont-2">
+            <div class="caption-text-1">
+                Explore the growth of women's soccer in the USA through our interactive grid. Each rectangle represents a match from 2016 to 2023, with the color intensity reflecting the attendance—deeper shades of purple signify larger crowds. White rectangles indicate matches where official attendance data is unavailable or where there was no attendance, such as the closed-door matches during the 2020 COVID-19 pandemic. Hover over any rectangle to see detailed information about the match, including the date, teams, and exact attendance numbers. 
+            </div>
+        </div>
+        </div>
+    <div class="outer-cont">
+
+    <div class="attedence-cont-1">
+        <div id="svg-attedence">
+            <svg width="2500" height="2000"></svg>
+            <div class="overlay-text-2016">| 2016</div>
+            <div class="overlay-text-2017">| 2017</div>
+            <div class="overlay-text-2018">| 2018</div>
+            <div class="overlay-text-2019">| 2019</div>
+            <div class="overlay-text-2021">| 2021</div>
+            <div class="overlay-text-2022">| 2022</div>
+            <div class="overlay-text-2023">| 2023</div>
+        </div>
+    </div>
+    </div>
+    <div class="outer-cont">
+    <div class="caption-text">
+        Despite the setback due to closed-door arrangement in the COVID-period, all NWSL team shows a strong trend of increase in attendance from 2016 to 2023. The absolute magnitude differences might indicate the popularity of a single team with regard to its local support, the overall trend of the league is however promising given the data we have shown.
+    </div>
+    </div>
+    <div class="outer-cont-2">
+
+        <div class="attedence-cont-2">
+            <img src="https://photolibrary.commons.gc.cuny.edu/wp-content/blogs.dir/27109/files/2024/05/Edit_Attedence2.png" height="50%" width="50%">
+        </img>
+        </div>
+        <!--  <div class="attedence-title">Average Attendance at National Women's Soccer League Stadiums </div> -->
+
+        </div>
+    <div class="tooltip"></div>
+</body>
+</html>
