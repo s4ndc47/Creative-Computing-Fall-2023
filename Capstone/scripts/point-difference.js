@@ -25,24 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sentences corresponding to each table
     const sentences = {
         table1: "This is the Original Rank Result.",
-        table2: "Allyson Schlegel's ranking information is shown here.",
-        table3: "Ashley Sanchez's ranking details are now displayed.",
-        table4: "Asisat Oshoala's performance metrics are presented.",
-        table5: "Barbra Banda's results can be seen in this table.",
-        table6: "Croix Bethune's data is loaded here.",
-        table7: "Débora Cristiane de Oliveira's ranking is displayed.",
-        table8: "Ella Stevens' ranking is shown in this table.",
-        table9: "Esther González's performance metrics are presented.",
-        table10: "Mallory Swanson's ranking details are now displayed.",
-        table11: "Marta Vieira da Silva's performance metrics are loaded here.",
-        table12: "Olivia Moultrie's data is displayed in this table.",
-        table13: "Racheal Kundananj's performance metrics are presented.",
-        table14: "Sophia Smith's ranking is displayed here.",
-        table15: "Temwa Chawinga's ranking information is presented.",
-        table16: "Trinity Rodman's performance data is shown here.",
-        table17: "Tyler Lussi's ranking metrics are loaded here.",
-        table18: "Vanessa DiBernardo's ranking data is displayed.",
-        table19: "Yazmeen Ryan's performance details are presented here."
+        table2: "Without Allyson Schlegel, Chicago Red Stars will drop 3 rank",
+        table3: "Without Ashley Sanchez, North Carolina Courage will drop 2 rank.",
+        table4: "Without Asisat Oshoala, Bay FC will drop 2 rank.",
+        table5: "Without Barbra Banda, Orlando Pride will drop 3 rank",
+        table6: "Without Croix Bethune, Washington Spirit will drop 2 rank.",
+        table7: "Without Débora, Kansas City Current won't changed",
+        table8: "Without Ella Stevens' ranking, NJ/NY Gothan FC will drop 2 rank.",
+        table9: "Without Esther González, NJ/NY Gothan FC will drop 2 rank.",
+        table10: "Without Mallory Swanson, Chicago Red Stars will drop 5 rank.",
+        table11: "Without Marta's performance,  Orlando Pride will drop 3 rank.",
+        table12: "Without Olivia Moultrie's performance, Portland Thorns FC won't changed.",
+        table13: "Without Racheal Kundananj's performance, Bay FC will drop 1 rank.",
+        table14: "Without Sophia Smith, Portland Thorns FC will drop 6 rank.",
+        table15: "Without Temwa Chawinga, Kansas City Current will drop 1 rank.",
+        table16: "Without Trinity Rodman Washington Spirit will drop 2 rank.",
+        table17: "Even without Tyler Lussi, North Carolina Courage won't changed.",
+        table18: "Even without Vanessa DiBernardo, Kansas City Current won't changed.",
+        table19: "Without Yazmeen Ryan, NJ/NY Gothan FC will drop 1 rank."
     };
 
     // Event listener for table selection dropdown
@@ -50,28 +50,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedKey = d3.select(this).property("value");
         const sentence = sentences[selectedKey];
         const tableContainer = d3.select("#ranking-table");
-    
+
+        // Update sentence
         if (sentence) {
             tableContainer.html(`<p>${sentence}</p>`);
         } else {
             console.error("Sentence not found for selected option:", selectedKey);
         }
-    
+
+        // Load corresponding file
         const selectedFile = files[selectedKey];
         if (selectedFile) {
             loadCSV(selectedFile, (data) => {
-                updateTable(data, false);
+                updateTable(data, false); // Pass `false` for subsequent updates
             });
         } else {
             console.error("Selected file key not found:", selectedKey);
         }
     });
-    
 
     // Initial Load: Show the sentence for the first option
     const initialSentence = sentences["table1"];
     d3.select("#ranking-table").html(`<p>${initialSentence}</p>`);
-
 
     let previousData = [];
 
@@ -92,27 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTable(data, true); // Pass `true` for the initial load
     });
 
-    // Event listener for table selection dropdown
-    d3.select("#table-selector").on("change", function () {
-        const selectedKey = d3.select(this).property("value");
-        const selectedFile = files[selectedKey];
-        if (selectedFile) {
-            loadCSV(selectedFile, (data) => {
-                updateTable(data, false); // Pass `false` for subsequent updates
-            });
-        } else {
-            console.error("Selected file key not found:", selectedKey);
-        }
-    });
-
-    function cleanRank(value) {
-        return parseInt(value.replace(/[^\d]/g, ''), 10); // Remove non-numeric characters
-    }
-    
+    // Function to prepare and clean data
     function prepareData(data) {
         data.forEach((d) => {
-            // Ensure d.Rank is a string before trimming and converting to number
-            d.Rank = parseInt(String(d.Rank).trim(), 10); // Convert to string, trim, and parse as integer
+            d.Rank = parseInt(String(d.Rank).trim(), 10); // Parse and clean rank
             d.P = +d.P;
             d.W = +d.W;
             d.D = +d.D;
@@ -120,16 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
             d.PTS = +d.PTS;
         });
     }
-    
 
-    
     // Function to update the ranking table
     function updateTable(data, initialLoad) {
         // Sort by Rank as a number
         data.sort((a, b) => a.Rank - b.Rank);
-    
+
         const table = d3.select("#ranking-table");
-    
+
         // Create table structure if it doesn't exist
         if (table.select("thead").empty()) {
             table.append("thead")
@@ -139,22 +120,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 .enter()
                 .append("th")
                 .text((d) => d);
-    
+
             table.append("tbody");
         }
-    
+
         const tbody = table.select("tbody");
-    
+
         // Clear all rows before binding new data
         tbody.selectAll("tr").remove();
-    
+
         // Bind data to rows using index as the key to enforce order
         const rows = tbody.selectAll("tr").data(data, (d, i) => i);
-    
+
         // Handle entering rows
         const newRows = rows.enter()
             .append("tr");
-    
+
         newRows.selectAll("td")
             .data((row) => [
                 row.Rank,
@@ -171,10 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .enter()
             .append("td")
             .html((value) => value);
-    
+
         // Merge existing rows with new data
         const mergedRows = rows.merge(newRows);
-    
+
         // Update cell contents
         mergedRows.selectAll("td")
             .data((row) => [
@@ -193,11 +174,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 (enter) => enter.append("td").html((d) => d),
                 (update) => update.html((d) => d)
             );
-    
+
         // Highlight rows that changed
         mergedRows.each(function (row) {
             const currentRow = d3.select(this);
-    
+
             const prev = previousData.find((d) => d.Team === row.Team);
             if (!initialLoad && (!prev || JSON.stringify(prev) !== JSON.stringify(row))) {
                 currentRow.selectAll("td")
@@ -207,9 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     .style("color", "white");
             }
         });
-    
+
         // Save current data for the next update
         previousData = [...data];
     }
-    
 });
