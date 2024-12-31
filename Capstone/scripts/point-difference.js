@@ -48,17 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener for table selection dropdown
     d3.select("#table-selector").on("change", function () {
         const selectedKey = d3.select(this).property("value");
-
-        // Update the ranking table container with the corresponding sentence
         const sentence = sentences[selectedKey];
         const tableContainer = d3.select("#ranking-table");
-
+    
         if (sentence) {
-            tableContainer.html(`<p>${sentence}</p>`); // Replace the table content with the sentence
+            tableContainer.html(`<p>${sentence}</p>`);
         } else {
             console.error("Sentence not found for selected option:", selectedKey);
         }
+    
+        const selectedFile = files[selectedKey];
+        if (selectedFile) {
+            loadCSV(selectedFile, (data) => {
+                updateTable(data, false);
+            });
+        } else {
+            console.error("Selected file key not found:", selectedKey);
+        }
     });
+    
 
     // Initial Load: Show the sentence for the first option
     const initialSentence = sentences["table1"];
