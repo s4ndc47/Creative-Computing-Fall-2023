@@ -6,44 +6,127 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/match-attedence.js"></script>
+    <script src="scripts/membership-timeline.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="scripts/team-map.js"></script>
+    <script src="scripts/point-difference.js"></script>
+    <script src="scripts/line-chart-attedence.js"></script>
     <style>
         
     </style>
 </head>
 <body>
+
+    
     <div class="title">
-        <h2>
+        <h1>
             Visualizaing the Rise of Women Soccer
-        </h2>
+        </h1>
+    </div>
+
+    <div id="timeline-container">
+        <img src="https://photolibrary.commons.gc.cuny.edu/wp-content/blogs.dir/27109/files/2024/12/timeline2024.png" alt="Historical Timeline">
+    </div>
+    
+
+    <div class="outer-cont">
+        <div class="attedence-cont-2">
+    
+        <iframe src="artboard/goal and point contribution 2.html" width="725 px" height="3150 px px px" style="border:none;"></iframe>
+        </div>     
+    </div>
+
+    <div class="outer-cont">
+        <select id="table-selector">
+          <option value="table1">Original Rank Result</option>
+          <option value="table2">Allyson Schlegel</option>
+          <option value="table3">Ashley Sanchez</option>
+          <option value="table4">Asisat Oshoala</option>
+          <option value="table5">Barbra Banda</option>
+          <option value="table6">Croix Bethune</option>
+          <option value="table7">Débora Cristiane de Oliveira</option>
+          <option value="table8">Ella Stevens</option>
+          <option value="table9">Esther González</option>
+          <option value="table10">Mallory_Swanson</option>
+          <option value="table11">Marta Vieira da Silva</option>
+          <option value="table12">Olivia_Moultrie</option>
+          <option value="table13">Racheal Kundananj</option>
+          <option value="table14">Sophia Smith</option>
+          <option value="table15">Temwa Chawinga</option>
+          <option value="table16">Trinity Rodman</option>
+          <option value="table17">Tyler Lussi</option>
+          <option value="table18">Vanessa DiBernardo</option>
+          <option value="table19">Yazmeen Ryan</option>
+        </select>
     </div>
     <div class="outer-cont">
         <div class="attedence-cont-2">
-            <div class="caption-text">
-                Explore the growth of women's soccer in the USA through this interactive grid. Each rectangle represents a match from 2016 to 2023, with the color intensity reflecting the attendance—deeper shades of purple signify larger crowds. White rectangles indicate matches where official attendance data is unavailable or where there was no attendance, such as the closed-door matches during the 2020 COVID-19 pandemic. Hover over any rectangle to see detailed information about the match, including the date, teams, and exact attendance numbers. 
-            </div>
+        <div id="ranking-table">
+             <!-- Sentences or tables will be displayed here -->
         </div>
         </div>
+    </div>
+    
+    
+
+
+  
+
+ 
+
     <div class="outer-cont">
 
-    <div class="attedence-cont-1">
-        <div id="svg-attedence">
-            <svg width="2500" height="2000"></svg>
-            <div class="overlay-text-2016">| 2016</div>
-            <div class="overlay-text-2017">| 2017</div>
-            <div class="overlay-text-2018">| 2018</div>
-            <div class="overlay-text-2019">| 2019</div>
-            <div class="overlay-text-2021">| 2021</div>
-            <div class="overlay-text-2022">| 2022</div>
-            <div class="overlay-text-2023">| 2023</div>
+        <iframe src="artboard/Attendance artborad1.html" width="725 px" height="160 px" style="border:none;"></iframe>
+           
+    </div>
+
+
+    <div class="outer-cont">
+        <div class="attedence-cont-2">
+            <svg id="lineChart" width="600" height="500"></svg>
+        </div>    
+    </div>
+
+
+        <div class="outer-cont">
+            <div class="attedence-cont-2">
+            <iframe src="artboard/Attendance artborad2.html" width="725 px" height="465 px" style="border:none;"></iframe>
+            </div>     
+        </div>
+    
+
+
+
+
+    <div class="outer-cont">
+     <div class="attedence-cont-1">
+         <div id="attendance-container">
+         <svg id="attendance-svg" width="2500" height="2000"></svg>
+            <div class="overlay-text-2016"><b>2016</b></div>
+            <div class="overlay-text-2017"><b>2017</b></div>
+            <div class="overlay-text-2018"><b>2018</b></div>
+            <div class="overlay-text-2019"><b>2019</b></div>
+            <div class="overlay-text-2021"><b>2021</b></div>
+            <div class="overlay-text-2022"><b>2022</b></div>
+            <div class="overlay-text-2023"><b>2023</b></div>
+            <div class="overlay-text-2024"><b>2024</b></div>
         </div>
     </div>
     </div>
+
     <div class="outer-cont">
     <div class="caption-text">
         Despite the setback due to closed-door arrangement in the COVID-period, all NWSL team shows a strong trend of increase in attendance from 2016 to 2023. The absolute magnitude differences might indicate the popularity of a single team with regard to its local support, the overall trend of the league is however promising given the data we have shown.
     </div>
     </div>
+    
+
+    <div class="timeline-cont-1">
+        <svg id="timeline-svg" width="1200" height="300"></svg>
+    </div>
+
+
     <div class="outer-cont-2">
 
         <div class="attedence-cont-2">
@@ -53,6 +136,8 @@
         <!--  <div class="attedence-title">Average Attendance at National Women's Soccer League Stadiums </div> -->
 
         </div>
-    <div class="tooltip"></div>
+    <div id="tooltip-attendance" class="tooltip"></div>
+    <div id="tooltip-timeline" class="tooltip"></div>
+        
 </body>
 </html>

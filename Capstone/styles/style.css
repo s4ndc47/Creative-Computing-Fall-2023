@@ -4,8 +4,28 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #454040;
+  color: white
 }
 
+
+#lineChart {
+  width: 100%;
+  height: auto;
+}
+
+
+#timeline-container {
+  width: 100%; /* Adjust based on your layout needs */
+  overflow-x: scroll;
+  overflow-y: hidden; /* Prevent vertical scrolling */
+}
+
+#timeline-container img {
+  width: auto; /* Maintain image aspect ratio */
+  height: auto; /* Adjust height as needed */
+  display: block; /* Remove extra space below the image */
+}
 
 
 .outer-cont, .outer-cont-2 {
@@ -14,13 +34,21 @@ body, html {
   align-items: center;
 }
 
-.attedence-cont-1, .attedence-cont-2 {
+#attendance-container, #timeline-cont-1 {
+  position: relative; /* Establishes a positioning context for absolute positioning inside */
+}
+
+.attedence-cont-1, .attedence-cont-2, .timeline-cont-1 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3%;
   margin-bottom: 3%;
+}
 
+.team-map-cont {
+  height: 1200px;
+  width: 1200px;
 }
 .caption-text {
   margin-top: 5%;
@@ -38,7 +66,7 @@ body, html {
   align-items: center;
   font-family: 'Merriweather', serif; 
   font-weight: 900;
-  font-size: 24px;
+
   margin-top: 5%;
 }
 
@@ -55,7 +83,7 @@ body, html {
   pointer-events: none;
 }
 
-#svg-attedence {
+#attendance-svg {
   position: relative;
   width: auto; /* Adjust based on your needs */
   height: auto; /* Adjust based on your needs */
@@ -70,72 +98,83 @@ body, html {
   top: 0.5%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color: white;
+  font-size: 14px;
   align-items: Left;
 
 }
 .overlay-text-2017 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 13.1%;  /* Center vertically */
+  top: 10.8%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color: white;
+  font-size: 14px;
   align-items: Left;
 
 }
 .overlay-text-2018 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 27.2%;  /* Center vertically */
+  top: 22.2%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color: #e9a1ff;
+  font-size: 14px;
   align-items: Left;
 
 }
 
 .overlay-text-2019 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 41.5%;  /* Center vertically */
+  top: 33.7%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color:  white;
+  font-size: 14px;
   align-items: Left;
 
 }
 
 .overlay-text-2021 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 54%;  /* Center vertically */
+  top: 44.2%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color:  white;
+  font-size: 14px;
   align-items: Left;
 
 }
 
 .overlay-text-2022 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 68%;  /* Center vertically */
+  top: 55.7%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color:  white;
+  font-size: 14px;
   align-items: Left;
 
 }
 
 .overlay-text-2023 {
   position: absolute; /* Positioned absolutely within the relative container */
-  top: 83.5%;  /* Center vertically */
+  top: 68.2%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #8e55e0;
-  font-size: 12px;
+  color:  white;
+  font-size: 14px;
+  align-items: Left;
+
+}
+
+.overlay-text-2024 {
+  position: absolute; /* Positioned absolutely within the relative container */
+  top: 82%;  /* Center vertically */
+  left: -5%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
+  color:  white;
+  font-size: 14px;
   align-items: Left;
 
 }
@@ -149,4 +188,39 @@ body, html {
   font-size: 12px;
   align-items: Left;
 
+}
+
+
+.axis.x {
+  font-size: 12px; /* Adjust font size */
+  color: rgb(192, 192, 192); /* Change the text color */
+}
+
+.axis.x path, .axis.x line {
+  stroke: rgb(192, 192, 192); /* Change the color of the axis lines */
+  stroke-width: 1px; /* Adjust the thickness of the axis */
+}
+
+.axis.x text {
+  fill: rgb(192, 192, 192); /* Text color */
+}
+
+td {
+  border: none; /* Removes the border */
+  text-align: left; /* Aligns table content to the left */
+  padding: 1px 8px; /* Adjust column spacing with horizontal padding */
+}
+th {
+  border: none; /* Removes the border */
+  text-align: left; /* Aligns table content to the left */
+  padding: 1px 8px; /* Adjust column spacing with horizontal padding */
+  color: #00ffa2;
+}
+table {
+  border: none; /* Removes the outer rectangle border */
+}
+
+
+table tr {
+  transition: color 0.5s ease;
 }

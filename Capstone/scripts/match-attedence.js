@@ -1,11 +1,12 @@
-d3.csv("NWSL_Attendance_2016_2023.csv").then(function(data) {
+d3.csv("NWSL_Attendance_2016_2024.csv").then(function(data) {
 
     data.forEach(function(d) {
         d.Attendance = parseInt(d.Attendance.replace(/,/g, ''), 10);
     });
 
-    const svg = d3.select("svg");
-    const tooltip = d3.select(".tooltip");
+    const svgAttendance = d3.select('#attendance-svg');
+    const tooltipAttendance = d3.select("#tooltip-attendance");
+    
 
     // Set up the dimensions for the rectangles and the grid
     const rectWidth = 50;
@@ -19,15 +20,16 @@ d3.csv("NWSL_Attendance_2016_2023.csv").then(function(data) {
     // Calculate the total width and height of the SVG needed
     const totalWidth = rectsPerRow * (rectWidth + rectPadding);
     const totalHeight = Math.ceil(data.length / rectsPerRow) * (rectHeight + rowPadding);
-    svg.attr("width", totalWidth)
+    svgAttendance.attr("width", totalWidth)
        .attr("height", totalHeight); // Set the SVG dimensions
 
     // Define a quantized color scale for attendance
-    const colorScale = d3.scaleQuantize()
-                         .domain([428, 34130])
-                         .range(["#f4effc", "#e4d7f8", "#d6c1f4", "#c7acf0", "#b996ec", "#ab80e8", "#9c6be4", "#8e55e0"]);
+    const colorScale = d3.scaleThreshold()
+             .domain([2500, 5000, 10000, 15000, 20000, 35038])
+             .range(["#675468", "#89688f", "#ba85c9", "#e9a1ff", "#ffb5fa", "#f8dfff"]);
 
-    svg.selectAll("rect")
+
+    svgAttendance.selectAll("rect")
        .data(data)
        .enter()
        .append("rect")
@@ -36,17 +38,37 @@ d3.csv("NWSL_Attendance_2016_2023.csv").then(function(data) {
        .attr("width", rectWidth)
        .attr("height", rectHeight)
        .attr("fill", d => {
-        // If Attendance is null or not a number, color it white
-        return (d.Attendance === null || isNaN(d.Attendance)) ? 'white' : colorScale(d.Attendance)})
+        if (d.Attendance === null || isNaN(d.Attendance)) {
+            return "none"; // Stroke-only rects
+        }
+        return colorScale(d.Attendance); // Color-filled rects
+    })
+    .attr("stroke", d => {
+        if (d.Attendance === null || isNaN(d.Attendance)) {
+            return "white"; // Stroke color
+        }
+        return "none"; // No stroke for valid data
+    })
+    .attr("stroke-width", d => {
+        if (d.Attendance === null || isNaN(d.Attendance)) {
+            return 2; // Stroke width for invalid data
+        }
+        return 0; // No stroke for valid data
+    })
         .on("mouseover", (event, d) => {
-            tooltip.style("display", "block")
+            tooltipAttendance.style("display", "block")
                    .style("left", (event.pageX + 10) + "px")
                    .style("top", (event.pageY + 10) + "px")
                    .html(`${d.Date}<br>Attendance: ${isNaN(d.Attendance) ? 'Closed-door' : d.Attendance}<br><strong>${d.Home}</strong> v.s. <strong>${d.Away}</strong><br>${d.Venue}`);
         })        
        .on("mouseout", () => {
-            tooltip.style("display", "none");
+        tooltipAttendance.style("display", "none");
        });
 }).catch(error => {
     console.error('Error loading the CSV:', error);
+});
+
+console.log("Attendance values and their colors:");
+data.forEach(d => {
+    console.log(d.Attendance, colorScale(d.Attendance));
 });
