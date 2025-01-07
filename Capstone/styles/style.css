@@ -14,6 +14,13 @@ body, html {
   height: auto;
 }
 
+.image_container {
+  width: 100%; /* Adjust based on your layout needs */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #timeline-container {
   width: 100%; /* Adjust based on your layout needs */
@@ -66,8 +73,9 @@ body, html {
   align-items: center;
   font-family: 'Merriweather', serif; 
   font-weight: 900;
-
   margin-top: 5%;
+  font-size: 150%;
+  color: #e9a1ff;
 }
 
 .tooltip {
