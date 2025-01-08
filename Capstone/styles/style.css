@@ -34,7 +34,6 @@ body, html {
   display: block; /* Remove extra space below the image */
 }
 
-
 .outer-cont, .outer-cont-2 {
   display: flex;
   justify-content: center;
@@ -64,7 +63,6 @@ body, html {
   align-items: center;
   width: 600px;
   font-family: 'Merriweather', serif; 
-
 }
 
 .title {
@@ -74,7 +72,7 @@ body, html {
   font-family: 'Merriweather', serif; 
   font-weight: 900;
   margin-top: 5%;
-  font-size: 150%;
+  font-size: 180%;
   color: #e9a1ff;
 }
 
@@ -109,7 +107,6 @@ body, html {
   color: white;
   font-size: 14px;
   align-items: Left;
-
 }
 .overlay-text-2017 {
   position: absolute; /* Positioned absolutely within the relative container */
@@ -119,8 +116,8 @@ body, html {
   color: white;
   font-size: 14px;
   align-items: Left;
-
 }
+
 .overlay-text-2018 {
   position: absolute; /* Positioned absolutely within the relative container */
   top: 22.2%;  /* Center vertically */
@@ -129,7 +126,6 @@ body, html {
   color: white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .overlay-text-2019 {
@@ -140,7 +136,6 @@ body, html {
   color:  white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .overlay-text-2021 {
@@ -151,7 +146,6 @@ body, html {
   color:  white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .overlay-text-2022 {
@@ -162,7 +156,6 @@ body, html {
   color:  white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .overlay-text-2023 {
@@ -173,7 +166,6 @@ body, html {
   color:  white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .overlay-text-2024 {
@@ -184,7 +176,6 @@ body, html {
   color:  white;
   font-size: 14px;
   align-items: Left;
-
 }
 
 .attedence-title {
@@ -195,9 +186,7 @@ body, html {
   color: #000000;
   font-size: 12px;
   align-items: Left;
-
 }
-
 
 .axis.x {
   font-size: 12px; /* Adjust font size */
@@ -218,6 +207,7 @@ td {
   text-align: left; /* Aligns table content to the left */
   padding: 1px 8px; /* Adjust column spacing with horizontal padding */
 }
+
 th {
   border: none; /* Removes the border */
   text-align: left; /* Aligns table content to the left */
@@ -227,7 +217,6 @@ th {
 table {
   border: none; /* Removes the outer rectangle border */
 }
-
 
 table tr {
   transition: color 0.5s ease;
