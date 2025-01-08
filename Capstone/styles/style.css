@@ -126,7 +126,7 @@ body, html {
   top: 22.2%;  /* Center vertically */
   left: -5%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Ensure it's centered perfectly */
-  color: #e9a1ff;
+  color: white;
   font-size: 14px;
   align-items: Left;
 
