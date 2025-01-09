@@ -16,19 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  // Parse date
   const parseDate = d3.timeParse("%Y-%m");
-
-  // Create scales
   const xScale = d3.scaleTime().range([0, width]);
   const yScale = d3.scaleLinear().range([height, 0]);
 
-  // Create line generator
   const line = d3.line()
     .x((d) => xScale(d.date))
     .y((d) => yScale(d.attendance));
 
-  // Load CSV data
   d3.csv("NWSL_Seasonal_Attendance_Trends_with_Year-Month_line_chart.csv")
     .then((data) => {
       // Parse and validate data
@@ -44,11 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Set domains for scales
       xScale.domain(d3.extent(data, (d) => d.date));
       yScale.domain([0, d3.max(data, (d) => d.attendance)]);
 
-      // Add X axis with custom date format
       svglineChart.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(
@@ -67,11 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("transform", "rotate(-45)")
         .style("text-anchor", "end");
 
-      // Add Y axis
       svglineChart.append("g")
         .call(d3.axisLeft(yScale).tickSize(0));
 
-      // Draw the line
       const linePath = svglineChart.append("path")
         .datum(data)
         .attr("fill", "none")
@@ -79,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("stroke-width", 2)
         .attr("d", line);
 
-      // Add data points as circles
       svglineChart.selectAll("circle")
         .data(data)
         .enter()
@@ -89,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("r", 3)
         .attr("fill", "#00ffa2");
 
-      // Initialize tooltip
       const lineCharttooltip = d3.select("body")
         .append("div")
         .attr("id", "lineCharttooltip")
@@ -103,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .style("opacity", 0)
         .style("pointer-events", "none");
 
-      // Add invisible overlay for better line hover
       svglineChart.append("path")
       .datum(data)
       .attr("fill", "none")

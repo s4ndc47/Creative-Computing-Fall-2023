@@ -6,28 +6,21 @@ d3.csv("NWSL_Attendance_2016_2024.csv").then(function(data) {
 
     const svgAttendance = d3.select('#attendance-svg');
     const tooltipAttendance = d3.select("#tooltip-attendance");
-    
 
-    // Set up the dimensions for the rectangles and the grid
     const rectWidth = 50;
     const rectHeight = 25;
     const rectPadding = 10;
     const rectsPerRow = 12;
     const rowPadding = 5;
 
-    
-
-    // Calculate the total width and height of the SVG needed
     const totalWidth = rectsPerRow * (rectWidth + rectPadding);
     const totalHeight = Math.ceil(data.length / rectsPerRow) * (rectHeight + rowPadding);
     svgAttendance.attr("width", totalWidth)
-       .attr("height", totalHeight); // Set the SVG dimensions
+       .attr("height", totalHeight); 
 
-    // Define a quantized color scale for attendance
     const colorScale = d3.scaleThreshold()
              .domain([2500, 5000, 10000, 15000, 20000, 35038])
              .range(["#675468", "#89688f", "#ba85c9", "#e9a1ff", "#ffb5fa", "#f8dfff"]);
-
 
     svgAttendance.selectAll("rect")
        .data(data)
@@ -39,21 +32,21 @@ d3.csv("NWSL_Attendance_2016_2024.csv").then(function(data) {
        .attr("height", rectHeight)
        .attr("fill", d => {
         if (d.Attendance === null || isNaN(d.Attendance)) {
-            return "none"; // Stroke-only rects
+            return "none"; 
         }
-        return colorScale(d.Attendance); // Color-filled rects
+        return colorScale(d.Attendance); 
     })
     .attr("stroke", d => {
         if (d.Attendance === null || isNaN(d.Attendance)) {
-            return "white"; // Stroke color
+            return "white"; 
         }
-        return "none"; // No stroke for valid data
+        return "none"; 
     })
     .attr("stroke-width", d => {
         if (d.Attendance === null || isNaN(d.Attendance)) {
-            return 2; // Stroke width for invalid data
+            return 2; 
         }
-        return 0; // No stroke for valid data
+        return 0; 
     })
         .on("mouseover", (event, d) => {
             tooltipAttendance.style("display", "block")

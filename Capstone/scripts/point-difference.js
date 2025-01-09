@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Define file paths for each table
+
     const files = {
         table1: "Points_Comparsion_NWSL_2024_Original.csv",
         table2: "Points_Comparsion_NWSL_2024_Allyson_Schlegel.csv",
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
         table19: "Points_Comparsion_NWSL_2024_Yazmeen_Ryan.csv",
     };
 
-    // Sentences corresponding to each table
     const sentences = {
         table1: "This is the Original Rank Result.",
         table2: "Without Allyson Schlegel, Chicago Red Stars will drop 3 rank",
@@ -45,20 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
         table19: "Without Yazmeen Ryan, NJ/NY Gothan FC will drop 1 rank."
     };
 
-    // Event listener for table selection dropdown
     d3.select("#table-selector").on("change", function () {
         const selectedKey = d3.select(this).property("value");
         const sentence = sentences[selectedKey];
         const tableContainer = d3.select("#ranking-table");
 
-        // Update sentence
         if (sentence) {
             tableContainer.html(`<p>${sentence}</p>`);
         } else {
             console.error("Sentence not found for selected option:", selectedKey);
         }
 
-        // Load corresponding file
         const selectedFile = files[selectedKey];
         if (selectedFile) {
             loadCSV(selectedFile, (data) => {
@@ -69,13 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Initial Load: Show the sentence for the first option
     const initialSentence = sentences["table1"];
     d3.select("#ranking-table").html(`<p>${initialSentence}</p>`);
 
     let previousData = [];
 
-    // Helper function to load a CSV file
     function loadCSV(filePath, callback) {
         d3.csv(filePath)
             .then((data) => {
@@ -87,12 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // Initial load: Load the first table
     loadCSV(files.table1, (data) => {
         updateTable(data, true); // Pass `true` for the initial load
     });
 
-    // Function to prepare and clean data
     function prepareData(data) {
         data.forEach((d) => {
             d.Rank = parseInt(String(d.Rank).trim(), 10); // Parse and clean rank
@@ -104,14 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Function to update the ranking table
     function updateTable(data, initialLoad) {
         // Sort by Rank as a number
         data.sort((a, b) => a.Rank - b.Rank);
 
         const table = d3.select("#ranking-table");
 
-        // Create table structure if it doesn't exist
         if (table.select("thead").empty()) {
             table.append("thead")
                 .append("tr")
@@ -125,14 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const tbody = table.select("tbody");
-
-        // Clear all rows before binding new data
         tbody.selectAll("tr").remove();
-
-        // Bind data to rows using index as the key to enforce order
         const rows = tbody.selectAll("tr").data(data, (d, i) => i);
-
-        // Handle entering rows
         const newRows = rows.enter()
             .append("tr");
 
@@ -153,10 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .append("td")
             .html((value) => value);
 
-        // Merge existing rows with new data
-        const mergedRows = rows.merge(newRows);
 
-        // Update cell contents
+        const mergedRows = rows.merge(newRows);
         mergedRows.selectAll("td")
             .data((row) => [
                 row.Rank,
@@ -175,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 (update) => update.html((d) => d)
             );
 
-        // Highlight rows that changed
         mergedRows.each(function (row) {
             const currentRow = d3.select(this);
 
@@ -189,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Save current data for the next update
         previousData = [...data];
     }
 });
