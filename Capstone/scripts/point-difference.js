@@ -23,25 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const sentences = {
-        table1: "This is the Original Rank Result.",
-        table2: "Without Allyson Schlegel, Chicago Red Stars will drop 3 rank",
-        table3: "Without Ashley Sanchez, North Carolina Courage will drop 2 rank.",
-        table4: "Without Asisat Oshoala, Bay FC will drop 2 rank.",
-        table5: "Without Barbra Banda, Orlando Pride will drop 3 rank",
-        table6: "Without Croix Bethune, Washington Spirit will drop 2 rank.",
-        table7: "Without Débora, Kansas City Current won't changed",
-        table8: "Without Ella Stevens' ranking, NJ/NY Gothan FC will drop 2 rank.",
-        table9: "Without Esther González, NJ/NY Gothan FC will drop 2 rank.",
-        table10: "Without Mallory Swanson, Chicago Red Stars will drop 5 rank.",
-        table11: "Without Marta's performance,  Orlando Pride will drop 3 rank.",
-        table12: "Without Olivia Moultrie's performance, Portland Thorns FC won't changed.",
-        table13: "Without Racheal Kundananj's performance, Bay FC will drop 1 rank.",
-        table14: "Without Sophia Smith, Portland Thorns FC will drop 6 rank.",
-        table15: "Without Temwa Chawinga, Kansas City Current will drop 1 rank.",
-        table16: "Without Trinity Rodman Washington Spirit will drop 2 rank.",
-        table17: "Even without Tyler Lussi, North Carolina Courage won't changed.",
-        table18: "Even without Vanessa DiBernardo, Kansas City Current won't changed.",
-        table19: "Without Yazmeen Ryan, NJ/NY Gothan FC will drop 1 rank."
+        table1: "This is the original table.",
+        table2: "Without the goal contributions from Allyson Schlegel, </br>Chicago Red Stars would drop from 8th to 10th,</br> miss playoffs. Racing Louisville would clinch playoffs instead.",
+        table3: "Without the goal contributions from Ashley Sanchez,</br> North Carolina Courage would drop from 5th to 8th,</br> they could have just clinched for playoffs.",
+        table4: "Without the goal contributions from Asisat Oshoala,</br> Bay FC would drop from 7th to 10th, miss playoffs.</br>Racing Louisville would clinch playoffs instead.",
+        table5: "Without the goal contributions from Barbra Banda,</br> Orlando Pride would drop from 1st to 4th. </br>The NWSL shield (regular season champion) </br>would go to Washington Spirit instead.",
+        table6: "Without the goal contributions from Croix Bethune,</br> Washington Spirit would drop from 2nd to 4th.",
+        table7: "Without the goal contributions from Débora,</br> Kansas City Current would remain 4th position.",
+        table8: "Without the goal contributions from Ella Stevens,</br> NJ/NY Gotham FC would slightly drop 1 position, </br>from 3rd to 4th.",
+        table9: "Without the goal contributions from Esther Gonzalez,</br> NJ/NY Gotham FC would slightly drop 1 position,</br>from 3rd to 4th.",
+        table10: "Without the goal contributions from Mallory Swanson,</br> Chicago Red Stars would drastically drop</br> from 8th to the bottom of the table, 14th. </br>Racing Louisville would clinch playoffs instead.",
+        table11: "Without the goal contributions from Marta,</br> Orlando Pride would fail to win the NWSL shield,</br> handing it to NJ/NY Gotham FC, </br>and drop to 4th position.",
+        table12: "Without the goal contributions from Olivia Moultrie,</br> Portland Thorns FC would slightly drop 1 position, from 6th to 7th. ",
+        table13: "Without the goal contributions from Racheal Kundananj,</br> Bay FC would slightly drop 1 position, from 7th to 8th. ",
+        table14: "Without the goal contributions from Sophia Smith,</br> Portland Thorns FC would drop heavily for 6 position, </br>from 6th to 12th and miss playoffs. </br>Racing Louisville would clinch playoffs instead.",
+        table15: "Without the goal contributions from Temwa Chawinga,</br> Kansas City Current would drop from 4th to 5th. </br>NJ/NY Gotham FC would take over from Orlando Pride </br>as the alternate NSWL shield winner.",
+        table16: "Without the goal contributions from Trinity Rodman,</br> Washington Spirit would drop from runner-up </br>in the regular season to 4th position.",
+        table17: "Without the goal contributions from Tyler Lussi,</br> North Carolina Courage would remain at 5th position.",
+        table18: "Without the goal contributions from Vanessa DiBernardo,</br> Kansas City Current would remain 4th position.  ",
+        table19: "Without the goal contributions from Yazmeen Ryan,</br> NJ/NY Gotham FC would slightly drop from 3rd to 4th."
     };
 
     d3.select("#table-selector").on("change", function () {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tableContainer = d3.select("#ranking-table");
 
         if (sentence) {
-            tableContainer.html(`<p>${sentence}</p>`);
+            tableContainer.html(`<p style="text-align: center">${sentence}</p>`);
         } else {
             console.error("Sentence not found for selected option:", selectedKey);
         }
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const initialSentence = sentences["table1"];
-    d3.select("#ranking-table").html(`<p>${initialSentence}</p>`);
+    d3.select("#ranking-table").html(`<p style="text-align: center">${initialSentence}</p>`);
 
     let previousData = [];
 
